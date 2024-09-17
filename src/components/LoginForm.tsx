@@ -21,12 +21,14 @@ import {zodResolver} from "@hookform/resolvers/zod"
 import {useForm} from "react-hook-form";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {login} from "@/actions/login";
+import {useRouter} from "next/navigation";
 const getData = () => {
     const data = axios.get('')
     console.log(data)
 }
 
 export default function LoginForm() {
+    const router = useRouter();
     const [isPending, startTransition] = useTransition();
     const form = useForm<z.infer<typeof LoginSchema>>({
         resolver: zodResolver(LoginSchema),
@@ -40,7 +42,10 @@ export default function LoginForm() {
             login(values)
                 .then((result) => {
                 if (result.success) {
-                    console.log(result.token)
+                    localStorage.setItem('access_token', result.access_token);
+                    localStorage.setItem('refresh_token', result.refresh_token);
+                    console.log(result)
+                    router.replace('/home');
                 } else {
                     console.error(result.error);
                 }
@@ -55,7 +60,7 @@ export default function LoginForm() {
         }
     },[])
     return (
-        <Card className="w-full max-w-sm">
+        <Card className="w-full max-w-sm ">
             <CardHeader>
                 <CardTitle className="text-2xl">Логин</CardTitle>
                 <CardDescription>

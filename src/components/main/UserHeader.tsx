@@ -2,16 +2,21 @@ import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
 import {Button} from "@/components/ui/button";
 import React from "react";
 
-const UserHeader = () => {
+interface UserHeaderProps {
+    name?:string;
+    avatar?:string
+}
+
+const UserHeader = ({name, avatar}:UserHeaderProps) => {
     return (
         <div className={'bg-[#DAE6F2] w-full'}>
             <div className={' w-full pt-8 pl-4 md:pl-8 md:pr-8 flex justify-between'}>
                 <div className={'flex items-center gap-x-6 md:gap-x-16'}>
-                    <Avatar className={'md:w-[200px] w-[60px] h-[60px] md:h-[200px] md:top-12 relative z-10  md:ml-16'}>
-                        <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                    <Avatar className={'md:w-[200px] w-[60px] h-[60px] md:h-[200px] lg:top-12 relative z-10  lg:ml-16'}>
+                        <AvatarImage src={avatar} alt="@shadcn" />
                         <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
-                    <h1 className={'font-bold text-xl md:text-3xl'}>Alexandra Kuibyshevskaya</h1>
+                    <h1 className={'font-bold text-xl md:text-3xl'}>{name}</h1>
                 </div>
                 <div className={'flex md:hidden mr-6'}>
                     <svg width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +26,7 @@ const UserHeader = () => {
                     </svg>
 
                 </div>
-                <div className={'hidden md:flex justify-end items-center space-x-4'}>
+                <div className={'hidden lg:flex justify-end items-center space-x-4'}>
                     <Button variant={'secondary'} className={'bg-inherit border-[#7C96B1] border gap-x-2'}>
                         Request a Change
                         <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
