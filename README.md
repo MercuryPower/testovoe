@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Тестовое задание для HarmonyHR
 
-## Getting Started
+## Описание
+Данный проект представляет собой тестовое задание для компании HarmonyHR. Он включает в себя функционал для выполнения необходимых бизнес-задач и демонстрации навыков разработки.
 
-First, run the development server:
+## Требования
+Перед началом работы убедитесь, что у вас установлены следующие инструменты:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Node.js (версия >= 14.x)
+npm (версия >= 6.x) или Yarn (по желанию)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+======================
+## Установка
+Для установки зависимостей выполните следующие шаги:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Склонируйте репозиторий:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`git clone https://github.com/MercuryPower/testovoe`
 
-## Learn More
+### Перейдите в директорию проекта:
 
-To learn more about Next.js, take a look at the following resources:
+`cd testovoe`
+Установите необходимые зависимости:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`npm install`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ или, если используете Yarn:
 
-## Deploy on Vercel
+`yarn install`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Билд и Запуск
+### Билд
+Для сборки проекта выполните следующую команду:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+`npm run build`
+
+или, если используете Yarn:
+
+`yarn build`
+
+### Запуск
+После успешной сборки запустите проект:
+
+`npm run start`
+
+или, если используете Yarn:
+
+`yarn start`
+
+------------
+## Скрипты
+`npm run build` — сборка проекта.
+`npm run start` — запуск приложения.
